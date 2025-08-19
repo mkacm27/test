@@ -40,8 +40,8 @@ class TransactionListItem extends ConsumerWidget {
                 ),
                 Chip(
                   label: Text(isPaid ? 'Paid' : 'Unpaid'),
-                  backgroundColor: isPaid ? colorScheme.primaryContainer.withOpacity(0.5) : colorScheme.errorContainer.withOpacity(0.5),
-                  labelStyle: TextStyle(color: isPaid ? colorScheme.onPrimaryContainer : colorScheme.onErrorContainer, fontWeight: FontWeight.bold),
+                  backgroundColor: isPaid ? Colors.green.shade100 : Colors.red.shade100,
+                  labelStyle: TextStyle(color: isPaid ? Colors.green.shade900 : Colors.red.shade900, fontWeight: FontWeight.bold),
                   padding: const EdgeInsets.symmetric(horizontal: 8),
                   visualDensity: VisualDensity.compact,
                 ),
@@ -83,9 +83,8 @@ class TransactionListItem extends ConsumerWidget {
   }
 
   Widget _buildActionButtons(BuildContext context, WidgetRef ref, bool isPaid) {
-    return ButtonBar(
+    return OverflowBar(
       alignment: MainAxisAlignment.end,
-      layoutBehavior: ButtonBarLayoutBehavior.constrained,
       children: [
         if (!isPaid)
           TextButton(

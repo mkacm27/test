@@ -165,7 +165,7 @@ class _TransactionFormScreenState extends ConsumerState<TransactionFormScreen> {
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
-                value: _selectedClass,
+                initialValue: _selectedClass,
                 items: AppConstants.classLevels.map((c) => DropdownMenuItem(value: c, child: Text('Class $c'))).toList(),
                 onChanged: (value) => setState(() => _selectedClass = value),
                 decoration: const InputDecoration(labelText: 'Class', prefixIcon: Icon(Icons.school_outlined)),
@@ -173,7 +173,7 @@ class _TransactionFormScreenState extends ConsumerState<TransactionFormScreen> {
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
-                value: _selectedInstructor,
+                initialValue: _selectedInstructor,
                 items: AppConstants.instructors.map((i) => DropdownMenuItem(value: i, child: Text(i))).toList(),
                 onChanged: (value) => setState(() => _selectedInstructor = value),
                 decoration: const InputDecoration(labelText: 'Instructor', prefixIcon: Icon(Icons.person_outline)),
@@ -185,7 +185,7 @@ class _TransactionFormScreenState extends ConsumerState<TransactionFormScreen> {
                   Expanded(
                     flex: 2,
                     child: DropdownButtonFormField<PrintingType>(
-                      value: _selectedPrintingType,
+                      initialValue: _selectedPrintingType,
                       items: PrintingType.values.map((pt) => DropdownMenuItem(value: pt, child: Text(pt == PrintingType.recto ? 'Recto' : 'Recto Verso'))).toList(),
                       onChanged: (value) {
                         if (value != null) {
@@ -233,7 +233,7 @@ class _TransactionFormScreenState extends ConsumerState<TransactionFormScreen> {
               ),
               if (_manualStatusOverride)
                 DropdownButtonFormField<PaymentStatus>(
-                  value: _manualPaymentStatus,
+                  initialValue: _manualPaymentStatus,
                   items: PaymentStatus.values.map((s) => DropdownMenuItem(value: s, child: Text(s.name))).toList(),
                   onChanged: (value) => setState(() => _manualPaymentStatus = value!),
                   decoration: const InputDecoration(labelText: 'Status'),
