@@ -27,7 +27,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-          cache: 'gradle'
 
       # 3. Sets up the Flutter SDK environment.
       - name: Set up Flutter
